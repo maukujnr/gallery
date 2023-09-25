@@ -13,7 +13,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'sudo apt update && sudo apt install npm'
+                sh 'echo "Attempt to install npm first"'
                 sh 'npm install'
                 sh 'npm run build'
             }
