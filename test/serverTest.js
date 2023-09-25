@@ -1,13 +1,11 @@
-process.env.NODE_ENV = 'test';   
+process.env.NODE_ENV = 'test';
 
-var chai = require('chai');
-var chaiHttp = require('chai-http');
-
-var server = require('../server');
-var should = chai.should();
-var expect = chai.expect;
+const chai = require('chai');
+const chaiHttp = require('chai-http');
+const app = require('../app'); // Assuming app.js is one directory above
 
 chai.use(chaiHttp);
+const expect = chai.expect;
 
 describe('Photos', function () {
     it('should list ALL photos on / GET', function (done) {
@@ -22,4 +20,3 @@ describe('Photos', function () {
         });
     });
   });
-//connecting to the database
