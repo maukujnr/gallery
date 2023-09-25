@@ -2,6 +2,7 @@
 pipeline {
     /*The “agent” section configures on which nodes the pipeline can be run */
     agent any /*Specifying “agent any” means that Jenkins will run the job on any of the available nodes.*/
+    tools {nodejs "nodejs"}
     stages { 
         stage('clone the right repository') {
             steps {
@@ -12,6 +13,7 @@ pipeline {
         }
         stage('build') {
             steps {
+                sh 'sudo apt-get install npm'
                 sh 'npm install'
                 sh 'npm run build'
             }
