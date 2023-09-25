@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                sh 'node --version'
+               sh git clone https://github.com/maukujnr/gallery.git
             }
         }
         stage('build') {
             steps {
-                sh 'node --version'
+                sh 'npm run build'
             }
         }
         stage('test') {
             steps {
-                sh 'node --version'
+                sh 'npm run test'
             }
         }
         stage('deploy') {
