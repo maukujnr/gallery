@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+const multer = require('multer');
+const uuid = require('uuid');
 const config = require('./_config');
 
 // Define routes

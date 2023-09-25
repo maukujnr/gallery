@@ -6,7 +6,7 @@ pipeline {
     stages { 
         stage('clone the right repository') {
             steps {
-               sh 'echo "Lets clone our github repository"'
+               sh 'echo "Let\'s clone my GitHub repository"'
                git 'https://github.com/maukujnr/gallery.git'
 
             }
@@ -15,17 +15,21 @@ pipeline {
             steps {
                 sh 'echo "Attempt to install npm first"'
                 sh 'npm install -g npm@latest'
+                sh 'npm install dotenv'
                 sh 'npm run build'
             }
         }
         stage('test') {
             steps {
-                sh 'npm node test'
+                sh 'npm --version'
+                sh 'npm test'
             }
         }
-        stage('deploy') {
+        stage('deploy to Render') {
             steps {
                 sh 'node --version'
+                sh 'echo "Deploying to Render"'
+                sh 'node server.js' 
             }
         }
     }

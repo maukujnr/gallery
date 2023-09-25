@@ -26,7 +26,7 @@ mongoose
 app.set('view engine', 'ejs');
 
 // Set up the public folder
-app.use(express.static(path.join(__dirname, 'public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Body parser middleware
 app.use(express.json());
