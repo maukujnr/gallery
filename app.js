@@ -15,8 +15,4 @@ if (process.env.NODE_ENV !== 'test') {
   app.listen(PORT, () => {
     console.log(`Server is listening at http://localhost:${PORT}`);
   });
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 197f571fa458bbdc594390cdc6155984666a78a9
