@@ -1,10 +1,13 @@
-/* Requires the Docker Pipeline plugin */
+/* Line  pipeline { } below declares the beginning of our pipeline. */
 pipeline {
-    agent any 
-    stages {
-        stage('clone') {
+    /*The “agent” section configures on which nodes the pipeline can be run */
+    agent any /*Specifying “agent any” means that Jenkins will run the job on any of the available nodes.*/
+    stages { 
+        stage('clone the right repository') {
             steps {
-               sh git clone https://github.com/maukujnr/gallery.git
+               sh 'echo "Lets clone our github repository"'
+               git 'https://github.com/maukujnr/gallery.git'
+
             }
         }
         stage('build') {
