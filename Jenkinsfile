@@ -14,7 +14,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo "Attempt to install npm first"'
-                sh 'npm install'
+                sh 'npm install -g npm@latest'
                 sh 'npm run build'
             }
         }
