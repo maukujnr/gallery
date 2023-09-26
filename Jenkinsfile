@@ -19,10 +19,6 @@ pipeline {
                     steps {
                         sh 'echo "Attempt to install npm first"'
                         sh 'npm install -g npm@latest' // Upgrade npm
-                        retry(count: 3, fail: true) {
-                            // Retry the npm install command up to 3 times on failure
-                            sh 'npm install dotenv'
-                        }
                         sh 'npm run build'
                     }
                 }
