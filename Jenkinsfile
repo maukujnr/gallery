@@ -26,6 +26,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'npm --version'
+                sh 'npm install -g mocha'
                 sh 'npm test'
             }
         }
