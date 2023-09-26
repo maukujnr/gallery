@@ -19,7 +19,7 @@ pipeline {
                     steps {
                         sh 'echo "Attempt to install npm first"'
                         sh 'npm install -g npm@latest' // Upgrade npm
-                        sh 'npm run build'
+                        /*sh 'npm run build'*/
                     }
                 }
 
