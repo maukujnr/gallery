@@ -25,7 +25,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'npm --version'
+                sh 'npm install'
                 sh 'npm install -g mocha'
                 sh 'npm install -g chai'
                 sh 'npm install -g chai-http'
