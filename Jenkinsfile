@@ -3,6 +3,11 @@ pipeline {
     tools { nodejs "nodejs" }
 
     stages {
+        stage('Preparation') {
+            steps {
+                deleteDir()
+            }
+        }
         stage('Clone the Right Repository') {
             steps {
                 sh 'echo "Let\'s clone my GitHub repository"'
